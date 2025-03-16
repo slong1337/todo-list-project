@@ -21,7 +21,8 @@ return (
     <div className="relative w-full max-w-md">
       <textarea 
         className="rounded-xl w-full h-32 p-4 pr-12 text-left resize-none outline outline-1 outline-gray-300 
-                   focus:outline-none focus:ring-2 focus:ring-slate-300 shadow-xl" 
+        focus:outline-none focus:ring-2 focus:ring-slate-300 shadow-xl
+        bg-white dark:bg-gray-800 text-black dark:text-white"
         value={todo} 
         onChange={(e) => setTodo(e.target.value)}
         onKeyDown={handleEnterPress}
