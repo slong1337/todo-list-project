@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import TodoItem from "@/scopes/App-Home/components/TodoItem"
 import TaskTodo from "@/scopes/App-Home/components/TaskTodo"
+import { AddIcon } from "@/components/icons/AddIcon"
 
 interface Task {
   id: number
@@ -72,7 +73,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-4 pt-4 justify-center dark:bg-gray-800 text-gray-800 dark:text-white ">
+      <div className="flex flex-wrap gap-4 py-4 justify-center dark:bg-gray-800 text-gray-800 dark:text-white ">
           <button className={`px-4 py-2 rounded-lg ${done === 'all' ? 'bg-gray-300 dark:bg-gray-400  text-black dark:text-white' : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-500 text-black dark:text-white'}`}
           onClick={() => setDone('all')}>Все</button>
           <button className={`px-4 py-2 rounded-lg ${done === 'active' ? 'bg-gray-300 dark:bg-gray-400  text-black dark:text-white' : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-500 text-black dark:text-white'}`}
@@ -82,23 +83,24 @@ export const Home = () => {
       </div>
 
 
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 py-2">
-      <div className="flex-1 w-full px-4">
-        <TodoItem todo={todo} setTodo={setTodo} addTask={addTask} />
-        {copiTasks.map((task) => (
-          <div key={task.id} className="flex">
-            <TaskTodo
-              id={task.id}
-              value={task.value}
-              status={task.status}
-              deleteTask={deleteTask}
-              toggleTask={toggleTask}
-            />
-          </div>
-        ))}
-      </div>
-  
-    </div>
+      <div className=" w-full min-h-screen flex flex-col items-center bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 pt-4 pb-40">
+  <div className="flex-1 w-full max-w-xl px-4">
+    {copiTasks.map((task) => (
+      <TaskTodo
+        key={task.id}
+        id={task.id}
+        value={task.value}
+        status={task.status}
+        deleteTask={deleteTask}
+        toggleTask={toggleTask}
+      />
+    ))}
+  </div>
+
+  <TodoItem todo={todo} setTodo={setTodo} addTask={addTask} />
+
+  <AddIcon className="w-10 h-10"/>
+</div>
 
 
 

@@ -33,7 +33,7 @@ export function App() {
     return (
         <>
             <div className="flex flex-wrap justify-around dark:bg-gray-800 text-gray-800 dark:text-white">
-                <h1 className=" text-4xl ml-4">ToDoList</h1>
+                <h1 className=" text-4xl">ToDoList</h1>
 
                 <button
                 onClick={() => setDarkMode(!darkMode)}
