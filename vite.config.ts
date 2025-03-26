@@ -9,8 +9,8 @@ export default defineConfig({
     remix({
       appDirectory: 'src',
       ssr: false,
-      basename: BASE_PATH ? ${BASE_PATH}/ : '/',
-      publicPath: BASE_PATH ? ${BASE_PATH}/ : '/',
+      basename: BASE_PATH ? `${BASE_PATH}/` : '/',
+      publicPath: BASE_PATH ? `${BASE_PATH}/` : '/',
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
