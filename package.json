@@ -3,7 +3,7 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
-  "homepage": "https://github.com/slong1337/todo-list-project",
+  "homepage": "https://slong1337.github.io/todo-list-project/",
   "scripts": {
     "predeploy": "npm run build",  
     "deploy": "gh-pages -d build", 
